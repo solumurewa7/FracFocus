@@ -22,13 +22,13 @@
   </header>
   <div class="grid">
     <div class="card">{{ jobs_chart | safe }}
-      <p class="caption">Drilling tracks the oil market: 2014 boom peak, 2015-16 price crash, 2020 COVID collapse, steady 12-14k jobs/year since. 2026 excluded as a partial year.</p>
+      <p class="caption">Bars: annual frack jobs. Amber line: WTI average oil price (EIA). Drilling activity tracks the oil market. 2026 excluded as a partial year.</p>
     </div>
     <div class="card">{{ water_chart | safe }}
-      <p class="caption">The median job uses ~12x more water than in 2012 (1.7M to ~20M gallons, about 30 Olympic pools), driven by 2+ mile horizontal laterals. Years under 90% reporting coverage excluded.</p>
+      <p class="caption">Median vs mean: the mean runs 10-20% above the median because of extreme outliers, which is why the median is the headline number. The typical job uses ~12x more water than in 2012. Years under 90% reporting coverage excluded.</p>
     </div>
     <div class="card wide">{{ chem_chart | safe }}
-      <p class="caption">Grouped by CAS number, not free-text names. About 71% of jobs include at least one ingredient withheld as a trade secret, and that figure is a floor.</p>
+      <p class="caption">Grouped by CAS number. Highlighted: water (~97% of jobs) and Proprietary (~71%). The 71% is a floor, since variants like "Trade Secret" and "Confidential" are not counted.</p>
     </div>
     <div class="card wide">{{ map_chart | safe }}
       <p class="caption">99.8% of jobs plot inside the continental US. The density resolves the major basins: Permian, Eagle Ford, Bakken, SCOOP/STACK, Marcellus.</p>

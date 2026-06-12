@@ -30,9 +30,10 @@ water_q = """
       AND TotalBaseWaterVolume IS NOT NULL AND TotalBaseWaterVolume > 0
 """
 water = pd.read_sql(water_q, conn)
-water_summary = water.groupby("year")["gallons"].median().reset_index()
-water_summary["median_mgal"] = water_summary["gallons"] / 1_000_000
-water_summary[["year", "median_mgal"]].to_csv(out / "water_per_year.csv", index=False)
+water_summary = water.groupby("year")["gallons"].agg(["median", "mean"]).reset_index()
+water_summary["Median"] = water_summary["median"] / 1_000_000
+water_summary["Mean"] = water_summary["mean"] / 1_000_000
+water_summary[["year", "Median", "Mean"]].to_csv(out / "water_per_year.csv", index=False)
 
 
 # 3. Map, aggregated to a grid
@@ -68,7 +69,7 @@ cas_names = {
     "14808-60-7": "Crystalline silica (sand)",
     "64742-47-8": "Petroleum distillates (carrier fluid)",
     "7647-01-0": "Hydrochloric acid",
-    "Proprietary": "Trade secret / undisclosed",
+    "Proprietary": "Proprietary (trade secret)",
     "67-56-1": "Methanol",
     "67-63-0": "Isopropanol",
     "107-21-1": "Ethylene glycol",
