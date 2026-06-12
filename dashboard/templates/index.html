@@ -20,10 +20,18 @@
     <p>247,482 disclosures · FracFocus Chemical Disclosure Registry · 2011-2026</p>
   </header>
   <div class="grid">
-    <div class="card">{{ jobs_chart | safe }}</div>
-    <div class="card">{{ water_chart | safe }}</div>
-    <div class="card wide">{{ chem_chart | safe }}</div>
-    <div class="card wide">{{ map_chart | safe }}</div>
+    <div class="card">{{ jobs_chart | safe }}
+      <p class="caption">Drilling tracks the oil market: 2014 boom peak, 2015-16 price crash, 2020 COVID collapse, steady 12-14k jobs/year since. 2026 excluded as a partial year.</p>
+    </div>
+    <div class="card">{{ water_chart | safe }}
+      <p class="caption">The median job uses ~12x more water than in 2012 (1.7M to ~20M gallons, about 30 Olympic pools), driven by 2+ mile horizontal laterals. Years under 90% reporting coverage excluded.</p>
+    </div>
+    <div class="card wide">{{ chem_chart | safe }}
+      <p class="caption">Grouped by CAS number, not free-text names. About 71% of jobs include at least one ingredient withheld as a trade secret, and that figure is a floor.</p>
+    </div>
+    <div class="card wide">{{ map_chart | safe }}
+      <p class="caption">99.8% of jobs plot inside the continental US. The density resolves the major basins: Permian, Eagle Ford, Bakken, SCOOP/STACK, Marcellus.</p>
+    </div>
   </div>
 </body>
 </html>
